@@ -1,12 +1,15 @@
 ## RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries
 
-> **Authors:** Jiahui Huang, Lei Liu, Hongwei Zhao, Tianqi Li, Bin Li.
+> **Authors:**
+Jiahui Huang, Lei Liu, Hongwei Zhao, Tianqi Li, Bin Li.
 
-This repo contains the code and data from our paper published in Journal of Energy Storage [RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries](Paper: ).
+This repo contains the code and data from our paper published in Journal of Energy Storage [RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries](Paper: https://www).
 
 ## 1. Abstract
 
+```bash
 Lithium-ion batteries play a crucial role in the fields of renewable energy and electric vehicles. Accurately predicting their Remaining Useful Life (RUL) is essential for ensuring safe and reliable operation. However, achieving precise RUL predictions poses significant challenges due to the complexities of degradation mechanisms and the impact of operational noise, particularly the capacity regeneration phenomenon. To address these issues, we propose a lithium-ion battery RUL prediction model named RUL-Mamba, which is based on the Mamba-Feature Attention Network (FAN)-Gated Residual Network (GRN). This model employs an encoder-decoder architecture that effectively integrates the Mamba module, FAN network, and GRN network. Mamba demonstrates superior temporal representation capabilities alongside efficient inference properties. The constructed FAN network leverages a feature attention mechanism to efficiently extract key features at each time step, enabling the Mamba block in the encoder to effectively capture information related to capacity regeneration from historical capacity sequences. The designed GRN network adaptively processes the decoded features output by the Mamba blocks in the decoder through a gating mechanism, accurately modeling the nonlinear mapping relationship between the decoded feature vector and the prediction target. Compared to state-of-the-art (SOTA) time series forecasting models on three battery degradation datasets from NASA, Oxford and Tongji University, the proposed model not only achieves SOTA predictive performance across various prediction starting points, with a maximum accuracy improvement of 42.5% over existing models, but also offers advantages such as efficient training, fast inference and being less influenced by the prediction starting point.
+```
 
 ## 2.Requirements
 
@@ -36,7 +39,7 @@ TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Da
 - an example for train and evaluate a new model：
 
 ```bash
-    python RUL_Prediction_RULMambaVAN.py
+python RUL_Prediction_RULMambaVAN.py
 ```
 
 - You can get the following output:
