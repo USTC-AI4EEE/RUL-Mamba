@@ -11,18 +11,19 @@ Lithium-ion batteries play a crucial role in the fields of renewable energy and 
 ## 2.Requirements
 
 The version of python is 3.10.13 .
-
-    numpy==1.21.6
-    numba==0.55.1
-    matplotlib==3.3.4
-    scipy==1.8.0
-    statsmodels==0.13.5
-    pytorch-lightning==1.9.5
-    pytorch-forecasting==0.10.3
-    sympy==1.12.1
-    reformer_pytorch==1.4.4
-    openpyxl==3.1.5
-    einops==0.8.0
+```bash
+numpy==1.21.6
+numba==0.55.1
+matplotlib==3.3.4
+scipy==1.8.0
+statsmodels==0.13.5
+pytorch-lightning==1.9.5
+pytorch-forecasting==0.10.3
+sympy==1.12.1
+reformer_pytorch==1.4.4
+openpyxl==3.1.5
+einops==0.8.0
+```
 
 ## 3.Datasets
 
@@ -32,64 +33,68 @@ TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Da
 
 ## 4.Usage
 
-* an example for train and evaluate a new model：
+- an example for train and evaluate a new model：
 
+```bash
     python RUL_Prediction_RULMambaVAN.py
+```
 
-* You can get the following output:
-    '''
-    ['encoder_cont']: torch.Size([128, 64, 18])
-    ['decoder_cont']: torch.Size([128, 1, 18])
-    y: torch.Size([1])
-    model name:RULMambaVAN
+- You can get the following output:
+    
+```bash
+['encoder_cont']: torch.Size([128, 64, 18])
+['decoder_cont']: torch.Size([128, 1, 18])
+y: torch.Size([1])
+model name:RULMambaVAN
 
-    selected battery name:CY25_1, start point:200
+selected battery name:CY25_1, start point:200
 
-    train dataset:1472,val:184,test:751
-    Input Feature num:18 ,name:['voltage mean', 'voltage std', 'voltage kurtosis', 'voltage skewness', 'CC Q', 'CC charge time', 'voltage slope', 'voltage entropy', 'current mean', 'current std', 'current kurtosis', 'current skewness', 'CV Q', 'CV charge time', 'current slope', 'current entropy', 'Capacity', 'target']
-    time_varying_unknown_reals num:1,decoder num:17 ,name:['target']
-    model name:RULMambaVAN
+train dataset:1472,val:184,test:751
+Input Feature num:18 ,name:['voltage mean', 'voltage std', 'voltage kurtosis', 'voltage skewness', 'CC Q', 'CC charge time', 'voltage slope', 'voltage entropy', 'current mean', 'current std', 'current kurtosis', 'current skewness', 'CV Q', 'CV charge time', 'current slope', 'current entropy', 'Capacity', 'target']
+time_varying_unknown_reals num:1,decoder num:17 ,name:['target']
+model name:RULMambaVAN
 
-    Number of parameters in network(参数数量(Params)): 44.7k
-    GPU available: True (cuda), used: True
-    TPU available: False, using: 0 TPU cores
-    IPU available: False, using: 0 IPUs
-    HPU available: False, using: 0 HPUs
-    LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+Number of parameters in network(参数数量(Params)): 44.7k
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
 
-    | Name            | Type        | Params
-    ------------------------------------------------
-    0 | loss            | MAE         | 0     
-    1 | logging_metrics | ModuleList  | 0     
-    2 | network         | RULMambaVAN | 44.7 K
-    ------------------------------------------------
-    44.7 K    Trainable params
-    0         Non-trainable params
-    44.7 K    Total params
-    0.179     Total estimated model params size (MB)
-    Epoch 32: 100%|████████████████████████████████████████████████████████████████████| 13/13 [00:02<00:00,  5.55it/s, loss=0.00093, train_loss_step=0.000929, val_loss=0.000709, train_loss_epoch=0.000945]
-    best_model_path: results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt                                                                
-    best_model_path:results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt <_io.TextIOWrapper name='results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/log_Feas_18_18_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
-    第1次实验运行的Epoch数量: 33  
+| Name            | Type        | Params
+------------------------------------------------
+0 | loss            | MAE         | 0     
+1 | logging_metrics | ModuleList  | 0     
+2 | network         | RULMambaVAN | 44.7 K
+------------------------------------------------
+44.7 K    Trainable params
+0         Non-trainable params
+44.7 K    Total params
+0.179     Total estimated model params size (MB)
+Epoch 32: 100%|████████████████████████████████████████████████████████████████████| 13/13 [00:02<00:00,  5.55it/s, loss=0.00093, train_loss_step=0.000929, val_loss=0.000709, train_loss_epoch=0.000945]
+best_model_path: results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt                                                                
+best_model_path:results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt <_io.TextIOWrapper name='results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/log_Feas_18_18_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
+第1次实验运行的Epoch数量: 33  
 
-    第1次实验运行的训练时间: 79.21130394935608  
+第1次实验运行的训练时间: 79.21130394935608  
 
-    第1次实验运行的推理时间: 0.5797321796417236  
+第1次实验运行的推理时间: 0.5797321796417236  
 
-    第1次实验的结果: 
-    MAE:0.0015, RMSE:0.0022, r2:0.9998, RUL_real:579, RUL_pred:581, AE:2, RE:0.0035  
+第1次实验的结果: 
+MAE:0.0015, RMSE:0.0022, r2:0.9998, RUL_real:579, RUL_pred:581, AE:2, RE:0.0035  
 
-    第1次实验运行的Epoch数量: 33  
+第1次实验运行的Epoch数量: 33  
 
-    第1次实验运行的训练时间: 79.21130394935608  
+第1次实验运行的训练时间: 79.21130394935608  
 
-    第1次实验运行的推理时间: 0.5797321796417236  
+第1次实验运行的推理时间: 0.5797321796417236  
 
-    第1次实验的结果: 
-    MAE:0.0015, RMSE:0.0022, r2:0.9998, RUL_real:579, RUL_pred:581, AE:2, RE:0.0035  
+第1次实验的结果: 
+MAE:0.0015, RMSE:0.0022, r2:0.9998, RUL_real:579, RUL_pred:581, AE:2, RE:0.0035  
 
-    第1次实验模型的保存路径:results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt
-    '''
+第1次实验模型的保存路径:results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt
+```
+
 ## 5.Acknowledgments
 
 Work&Code is inspired by https://github.com/USTC-AI4EEE/PatchFormer.
@@ -98,6 +103,8 @@ Work&Code is inspired by https://github.com/USTC-AI4EEE/PatchFormer.
 
 If you find our work useful in your research, please consider citing:
 
+```latex
 
+```
 
-If you have any problems, contact me via hjh20010608@mail.ustc.edu.cn.
+If you have any problems, contact me via liulei13@ustc.edu.cn.
