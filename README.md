@@ -3,7 +3,8 @@
 > **Authors:**
 Jiahui Huang, Lei Liu, Hongwei Zhao, Tianqi Li, Bin Li.
 
-This repo contains the code and data from our paper published in Journal of Energy Storage [RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries](Paper: https://www.sciencedirect.com/science/article/pii/S2352152X25010898?dgcid=author).
+This repo contains the code and data from our paper published in Journal of Energy Storage 
+(Paper: https://www.sciencedirect.com/science/article/pii/S2352152X25010898?dgcid=author).
 
 ## 1. Abstract
 
