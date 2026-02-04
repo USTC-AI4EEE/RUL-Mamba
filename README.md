@@ -1,4 +1,4 @@
-## RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries
+# RUL-Mamba: Mamba-Based Remaining Useful Life Prediction for Lithium-Ion Batteries
 
 > **Authors:**
 Jiahui Huang, Lei Liu, Hongwei Zhao, Tianqi Li, Bin Li.
@@ -11,30 +11,31 @@ Website: https://www.sciencedirect.com/science/article/pii/S2352152X25010898?dgc
 
 Lithium-ion batteries play a crucial role in the fields of renewable energy and electric vehicles. Accurately predicting their Remaining Useful Life (RUL) is essential for ensuring safe and reliable operation. However, achieving precise RUL predictions poses significant challenges due to the complexities of degradation mechanisms and the impact of operational noise, particularly the capacity regeneration phenomenon. To address these issues, we propose a lithium-ion battery RUL prediction model named RUL-Mamba, which is based on the Mamba-Feature Attention Network (FAN)-Gated Residual Network (GRN). This model employs an encoder-decoder architecture that effectively integrates the Mamba module, FAN network, and GRN network. Mamba demonstrates superior temporal representation capabilities alongside efficient inference properties. The constructed FAN network leverages a feature attention mechanism to efficiently extract key features at each time step, enabling the Mamba block in the encoder to effectively capture information related to capacity regeneration from historical capacity sequences. The designed GRN network adaptively processes the decoded features output by the Mamba blocks in the decoder through a gating mechanism, accurately modeling the nonlinear mapping relationship between the decoded feature vector and the prediction target. Compared to state-of-the-art (SOTA) time series forecasting models on three battery degradation datasets from NASA, Oxford and Tongji University, the proposed model not only achieves SOTA predictive performance across various prediction starting points, with a maximum accuracy improvement of 42.5% over existing models, but also offers advantages such as efficient training, fast inference and being less influenced by the prediction starting point.
 
-## 2.Requirements
+## 2. Environment setup
 
-The version of python is 3.10.13 .
+- first method (recommended)
+
 ```bash
-numpy==1.21.6
-numba==0.55.1
-matplotlib==3.3.4
-scipy==1.8.0
-statsmodels==0.13.5
-pytorch-lightning==1.9.5
-pytorch-forecasting==0.10.3
-sympy==1.12.1
-reformer_pytorch==1.4.4
-openpyxl==3.1.5
-einops==0.8.0
+conda env create -f rulmamba.yaml
+conda activate rulmamba
 ```
 
-## 3.Datasets
+- second method
+
+```bash
+conda create -n rulmamba python=3.10.13
+conda activate rulmamba
+pip install torch==1.13.1
+pip install -r requirements.txt
+```
+
+## 3. Datasets
 
 The TJU dataset is already placed in the datasets folder. The URL of TJU dataset is as follows:
 
 TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Dataset_3_NCM_NCA_battery.
 
-## 4.Usage
+## 4. Usage
 
 - an example for train and evaluate a new model：
 
@@ -98,11 +99,11 @@ MAE:0.0015, RMSE:0.0022, r2:0.9998, RUL_real:579, RUL_pred:581, AE:2, RE:0.0035
 第1次实验模型的保存路径:results_TJU_RUL_prediction_sl_64/CY25_1/RULMambaVAN/SP200/Exp1/RULMambaVANNetModel/checkpoints/epoch=32-step=330-v1.ckpt
 ```
 
-## 5.Acknowledgments
+## 5. Acknowledgments
 
-Work&Code is inspired by https://github.com/USTC-AI4EEE/PatchFormer.
+Work & Code is inspired by https://github.com/USTC-AI4EEE/PatchFormer.
 
-## 6.Citation
+## 6. Citation
 
 If you find our work useful in your research, please consider citing:
 
