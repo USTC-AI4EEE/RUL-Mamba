@@ -1,0 +1,22 @@
+model:
+  name: TimeMixer
+  class_path: Models.TimeMixer.TimeMixerNetModel
+  build_args:
+    seq_len: 16
+    pred_len: 1
+    enc_in: 1
+    c_out: 1
+    e_layers: 2
+    d_model: 16
+    d_ff: 32
+    top_k: 5
+    embed: timeF
+    freq: h
+    dropout: 0.1
+    moving_avg: 25
+    channel_independence: 1
+    decomp_method: moving_avg
+    use_norm: 1
+    down_sampling_layers: 3
+    down_sampling_window: 2
+    down_sampling_method: avg

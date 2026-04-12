@@ -1,0 +1,24 @@
+model:
+  name: FEDformer
+  class_path: Models.FEDformer.FEDFormerNetModel
+  build_args:
+    seq_len: 64
+    label_len: 0
+    pred_len: 1
+    enc_in: 1
+    dec_in: 1
+    c_out: 1
+    e_layers: 2
+    d_layers: 1
+    n_heads: 4
+    factor: 3
+    d_model: 16
+    d_ff: 32
+    embed: timeF
+    freq: h
+    dropout: 0.1
+    moving_avg: 25
+    version: fourier
+    mode_select: random
+    modes: 32
+    activation: gelu

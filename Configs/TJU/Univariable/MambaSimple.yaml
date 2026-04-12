@@ -1,0 +1,15 @@
+model:
+  name: MambaSimple
+  class_path: Models.MambaSimple.MambaSimpleNetModel
+  build_args:
+    pred_len: 1
+    enc_in: 1
+    c_out: 1
+    e_layers: 2
+    d_model: 16
+    d_ff: 32
+    expand: 2
+    d_conv: 4
+    embed: timeF
+    freq: h
+    dropout: 0.1

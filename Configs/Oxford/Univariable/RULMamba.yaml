@@ -1,0 +1,12 @@
+model:
+  name: RULMamba
+  class_path: Models.RULMamba.RULMambaNetModel
+  build_args:
+    seq_len: 10
+    pred_len: 1
+    enc_in: 1
+    c_out: 1
+    d_model: 16
+    n_dec_layer: 2
+    dropout: 0.1
+    expand: 2

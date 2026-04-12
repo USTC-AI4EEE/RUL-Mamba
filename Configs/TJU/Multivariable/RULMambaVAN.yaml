@@ -1,0 +1,12 @@
+model:
+  name: RULMambaVAN
+  class_path: Models.RULMambaVAN.RULMambaVANNetModel
+  build_args:
+    seq_len: 64
+    pred_len: 1
+    enc_in: 17
+    c_out: 1
+    d_model: 16
+    n_dec_layer: 2
+    dropout: 0.1
+    expand: 2

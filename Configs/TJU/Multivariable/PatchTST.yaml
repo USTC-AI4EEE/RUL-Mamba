@@ -1,0 +1,18 @@
+model:
+  name: PatchTST
+  class_path: Models.PatchTST.PatchTSTNetModel
+  build_args:
+    patch_len: 4
+    stride: 2
+    seq_len: 64
+    pred_len: 1
+    enc_in: 17
+    c_out: 1
+    e_layers: 2
+    n_heads: 4
+    factor: 3
+    d_model: 16
+    d_ff: 32
+    dropout: 0.1
+    activation: gelu
+    output_attention: false

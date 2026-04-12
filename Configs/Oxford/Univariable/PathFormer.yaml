@@ -1,0 +1,9 @@
+model:
+  name: PathFormer
+  class_path: Models.PathFormer.PathFormerModel
+  build_args:
+    seq_len: 10
+    pred_len: 1
+    enc_in: 1
+    k: 2
+    patch_size_list: [10, 5, 2, 1]

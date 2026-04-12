@@ -1,0 +1,46 @@
+dataset:
+  name: Oxford
+  input_mode: Univariable
+  data_dir: Data/Oxford_Data/
+  battery_cache_path: Data/Oxford_Data/Oxford.npy
+  battery_list: [Cell1, Cell3, Cell8]
+  real_data_path_template: Results/Capacity_{test_name}_Real_Data.pth
+  rated_capacity: 0.74
+  test_name: Cell8
+  start_points: [20, 30, 40]
+
+features:
+  time_varying_known_reals:
+    - capacity
+  time_varying_unknown_reals:
+    - target
+
+window:
+  seq_len: 10
+  label_len: 0
+  pred_len: 1
+
+train:
+  count: 10
+  batch_size: 8
+  max_epochs: 200
+  learning_rate: 0.001
+  patience: 20
+  gradient_clip_val: 0.2
+  predict_batch_size: 64
+  train_split_ratio: 0.8
+  num_workers: 0
+  shuffle_train: true
+  drop_last_train: true
+
+runtime:
+  seed: 2025
+  auto_select_gpu: true
+
+output:
+  results_dir: Results
+  logs_dir: Logs
+  outputs_dir: Outputs
+  results_filename_template: "{dataset}_{input_mode}_{model}_{test_name}.pth"
+  log_filename_template: "{dataset}_{input_mode}_{model}_{test_name}.log"
+  plot_dir_template: "Plots/{dataset}/{input_mode}/{test_name}/{model}"
