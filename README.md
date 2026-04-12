@@ -16,7 +16,7 @@ Lithium-ion batteries play a crucial role in the fields of renewable energy and 
 - first method (recommended)
 
 ```bash
-conda env create -f rulmamba.yaml
+conda env create -f rulmamba_env.yaml
 conda activate rulmamba
 ```
 
