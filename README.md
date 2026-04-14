@@ -388,36 +388,11 @@ Each dataset folder contains:
 
 Modify these files to customize training parameters, model architectures, and experimental settings.
 
-
 ### 4.7. Times New Roman Font Setup
 
-The plotting scripts use the 'Times New Roman' font family. There are two ways to set it up:
+The plotting scripts use the 'Times New Roman' font family. If you want `Times New Roman` to be available globally in matplotlib (e.g., via `rcParams`), you need to install the font at the system level. Reference: [CSDN Blog](https://blog.csdn.net/qq_49323609/article/details/139026798).
 
-**Method 1**: Using the bundled font files
-
-This project includes Times Newer Roman font files in the `fonts/` directory:
-
-```bash
-fonts/
-├── Times-Newer-Roman-Regular.otf
-└── Times-Newer-Roman-Bold.otf
-```
-
-The plotting scripts load these fonts directly via `FontProperties`, so no system-level installation is needed:
-
-```python
-from matplotlib.font_manager import FontProperties
-font_regular = FontProperties(fname='fonts/Times-Newer-Roman-Regular.otf', size=20)
-font_bold = FontProperties(fname='fonts/Times-Newer-Roman-Bold.otf', size=20)
-```
-
-Note: When running the plotting scripts, make sure your working directory is the project root (`PatchFormer/`), so that the relative path `fonts/` can be found correctly. Alternatively, you can create a subdirectory `fonts/` and place the font files there to match the path used in some scripts (`fonts/Times-Newer-Roman-Regular.otf`).
-
-**Method 2**: System-level installation (recommended)  
-
-If you want `Times New Roman` to be available globally in matplotlib (e.g., via `rcParams`), you need to install the font at the system level. Reference: [CSDN Blog](https://blog.csdn.net/qq_49323609/article/details/139026798).
-
-After this setup, scripts that use `plt.rcParams['font.family'] = 'Times New Roman'` (such as `CALCE_I_Graph_by_Evaluation.py`) will work correctly.
+After this setup, scripts that use `plt.rcParams['font.family'] = 'Times New Roman'` will work correctly.
 
 ## 5. Citation
 
